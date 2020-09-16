@@ -52,8 +52,6 @@ jobs:
           command: |
             cd /home/ng40/magma/automation
             ssh ng40@ssh ng40@192.168.60.81"/home/ng40/magma/automation && ng40test watchdog_diameter.ntl"
-            
-  upload_results:
 
 workflows:
   version: 2
