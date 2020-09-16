@@ -23,7 +23,6 @@ jobs:
           name: "upload version scriipit in ng40"
           command: scp version.txt magma@192.168.60.109:/home/magma   
 
-
 workflows:
   version: 2
   alltest:
