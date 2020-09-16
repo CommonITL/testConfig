@@ -56,7 +56,7 @@ jobs:
   upload_results:
 
 workflows:
-  version: 2
-  alltest:
-    jobs:
-      - upgrade_magma:
+	version: 2
+	alltest:
+		jobs:
+			- upgrade_magma
