@@ -1,0 +1,28 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
+version: 2
+commands:
+  my-command:
+    steps:
+      - run: echo "Upgarde AGW & FEG, Magma nodes"
+      - run: echo "Fetching latest version from APT-Cache"
+jobs:
+  test:
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "dc:71:38:2c:70:cb:fc:6d:e9:9a:b6:61:0d:c5:b7:5a"
+      - my-command
+      - run:
+          name: Upgrade AGW & FEG
+          command: |
+            cd /home/ng40/magma/automation
+            ssh ng40@ssh ng40@192.168.60.81"/home/ng40/magma/automation && ng40test watchdog_diameter.ntl"
+      
+  run_Gx-Gy-testSuite:
+  upload_results:
+
+workflows:
+  version: 2
+  check-build:
+    jobs:
+      - test:
