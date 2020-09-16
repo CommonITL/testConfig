@@ -21,7 +21,7 @@ jobs:
       - run:
           name: "get latest version"
           command:  |
-            ssh -T magma@192.168.61.17 < pwd
+            ssh -T magma@192.168.61.17 'pwd'
           
       - run:
           name: "upload version scripit in ng40"
