@@ -24,7 +24,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "dc:71:38:2c:70:cb:fc:6d:e9:9a:b6:61:0d:c5:b7:5a"
+            - "3b:52:f7:72:45:ba:a5:04:0b:53:ff:95:68:3d:5e:fa"
       - run:
           name: "Upgrade AGW & FEG"
           command:  |
