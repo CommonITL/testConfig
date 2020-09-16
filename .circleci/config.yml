@@ -21,7 +21,7 @@ jobs:
       - run:
           name: "get latest version"
           command:  |
-            ssh -T magma@192.168.61.17"cd /home/magma/terravm_logs && sh get_version.sh > version.txt"
+            ssh -T magma@192.168.61.17 < sh /home/magma/terravm_logs/get_version.sh > version.txt
           
       - run:
           name: "upload version scriipit in ng40"
