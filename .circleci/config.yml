@@ -7,6 +7,9 @@ commands:
       - run: echo "Fetching latest version from APT-Cache"
 jobs:
   get_version:
+    machine:
+      image: ubuntu-1604
+      
     steps:
       - add_ssh_keys:
           fingerprints:
