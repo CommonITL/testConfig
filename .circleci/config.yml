@@ -1,5 +1,5 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
+version: 2.0
 commands:
   my-command:
     steps:
@@ -21,7 +21,7 @@ jobs:
       - run:
           name: "get latest version"
           command:  |
-            ssh magma@192.168.61.17 'pwd'
+            ssh magma@192.168.61.17 '/home/magma/terravm_logs/get_version.sh > version.txt'
           
       - run:
           name: "upload version scripit in ng40"
@@ -29,7 +29,7 @@ jobs:
 
 
 workflows:
-  version: 2.1
+  version: 2.0
   alltest:
     jobs:
       - get_version
