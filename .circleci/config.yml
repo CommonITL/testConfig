@@ -28,7 +28,6 @@ jobs:
           name: "upload version scripit in ng40"
           command: ssh magma@192.168.61.17 '/home/magma/terravm_logs/get_version.sh > version.txt'
 
-
 workflows:
   version: 2
   alltest:
