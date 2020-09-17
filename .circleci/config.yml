@@ -20,12 +20,13 @@ jobs:
           
       - run:
           name: "get latest version"
-          command:  |
-            ssh magma@192.168.61.17 '/home/magma/terravm_logs/get_version.sh > version.txt'
+          command: scp version.txt magma@192.168.60.109:/home/magma
+            
+            
           
       - run:
           name: "upload version scripit in ng40"
-          command: scp version.txt magma@192.168.60.109:/home/magma   
+          command: ssh magma@192.168.61.17 '/home/magma/terravm_logs/get_version.sh > version.txt'
 
 
 workflows:
