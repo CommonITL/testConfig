@@ -11,6 +11,12 @@ jobs:
       image: ubuntu-1604:201903-01
       
     steps:
+      - run:
+          name: Configure and start VPN client
+          command: |
+            sudo /sbin/modprobe tun
+            echo Facebook@123 | sudo openconnect -u magmaterravm --passwd-on-stdin vpn.thetiplabs.com
+            
       - add_ssh_keys:
           fingerprints:
             - "dc:71:38:2c:70:cb:fc:6d:e9:9a:b6:61:0d:c5:b7:5a"
@@ -22,8 +28,6 @@ jobs:
           name: "get latest version"
           command: scp version.txt magma@192.168.60.109:/home/magma
             
-            
-          
       - run:
           name: "upload version scripit in ng40"
           command: ssh magma@192.168.61.17 '/home/magma/terravm_logs/get_version.sh > version.txt'
