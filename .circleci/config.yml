@@ -21,7 +21,7 @@ jobs:
           name: Configure and start VPN client
           command: |
             sudo /sbin/modprobe tun
-            echo Facebook@123 | sudo openconnect -u magmaterravm --passwd-on-stdin vpn.thetiplabs.com
+            echo Facebook@123 | openconnect -u magmaterravm --passwd-on-stdin vpn.thetiplabs.com
             
       - add_ssh_keys:
           fingerprints:
